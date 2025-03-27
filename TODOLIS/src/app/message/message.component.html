@@ -1,0 +1,30 @@
+@if (tasks) {
+  <ion-item [routerLink]="'/message/' + tasks.id" [detail]="false">
+    
+    <div slot="start"><ion-checkbox style="margin-left: 12px;" [(ngModel)]="tasks.state" (click)="StateChange(tasks)" ></ion-checkbox></div>
+    <ion-label class="ion-text-wrap">
+      <h2>
+        {{ tasks.title }}
+        <span class="date">
+          <ion-note>{{ tasks.date | date:"dd/MM/YYYY hh:mm" }}</ion-note>
+          @if (isIos()) {
+            <ion-icon aria-hidden="true" name="chevron-forward" size="small"></ion-icon>
+          }
+        </span>
+      </h2>
+      <p>
+      {{tasks.category}} |
+      <ion-note style="text-align: end;">
+        <countdown
+        style="margin-left: auto; margin-right: 2%;"
+        [config]="Timer(tasks.date)"
+        >
+          <ng-template #tpl let-days="days" let-hours="hours" let-minutes="minutes" let-seconds="seconds">
+            <span *ngIf="days > 0">{{ days }}</span>
+          </ng-template>
+        </countdown>
+      </ion-note>
+      </p>
+    </ion-label>
+  </ion-item>
+}

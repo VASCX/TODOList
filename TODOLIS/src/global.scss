@@ -1,0 +1,162 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+@import "@ionic/angular/css/palettes/dark.class.css";
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+:root {
+	--ion-background-color: whitesmoke;
+	--ion-background-color-rgb: 0,0,0;
+
+	--ion-text-color: #000000;
+	--ion-text-color-rgb: 255,255,255;
+}
+
+ion-checkbox{
+	--border-width: 2px;
+	--border-color:#1A1A1A;
+	--checkbox-background-checked:#1A1A1A;
+	--border-color-checked :#1A1A1A;	
+}
+#dateInput::part(native-input)::-webkit-calendar-picker-indicator {	
+	background-color:black;
+}
+
+.alert-wrapper.sc-ion-alert-md {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: var(--width);
+    min-width: var(--min-width);
+    max-width: var(--max-width);
+    height: var(--height);
+    min-height: var(--min-height);
+    max-height: var(--max-height);
+    background: #1B1B1B;
+    contain: content;
+    opacity: 0;
+    z-index: 10;
+}
+
+.alert-radio-label.sc-ion-alert-md {
+    -webkit-padding-start: 52px;
+    padding-inline-start: 52px;
+    -webkit-padding-end: 26px;
+    padding-inline-end: 26px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    -ms-flex: 1;
+    flex: 1;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.alert-button.sc-ion-alert-md {
+    border-radius: 2px;
+    -webkit-margin-start: 0;
+    margin-inline-start: 0;
+    -webkit-margin-end: 8px;
+    margin-inline-end: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+    -webkit-padding-start: 10px;
+    padding-inline-start: 10px;
+    -webkit-padding-end: 10px;
+    padding-inline-end: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: 500;
+    text-align: end;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+[aria-checked=true].sc-ion-alert-md .alert-radio-label.sc-ion-alert-md {
+    color: var(--ion-color-step-850, var(--ion-text-color-step-150, white));
+}
+
+ion-modal {
+    --ion-background-color: #1B1B1B;
+      --ion-background-color-rgb: 0,0,0;
+  
+      --ion-text-color: whitesmoke;
+      --ion-text-color-rgb: 255,255,255;
+  }
+  ion-modal h1 {
+    margin: 20px 20px 10px 20px;
+  }
+  
+  ion-modal ion-icon {
+    margin-right: 6px;
+  
+    width: 48px;
+    height: 48px;
+  
+    padding: 4px 0;
+  
+    color: #ffffff;
+  }
+  
+  ion-modal .wrapper {
+    margin-bottom: 10px;
+  }
+
+
+  
+  .sc-ion-input-md-h {
+    --border-width: 1px;
+    --border-color: rgb(255 255 255 / 38%);
+    --highlight-height: 2px;
+    font-size: inherit;
+  }
+  
+  .ion-valid.sc-ion-input-md-h {
+    --highlight-color: white;
+  }
+
+  .alert-title.sc-ion-alert-md {
+    color: whitesmoke;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.alert-radio-group.sc-ion-alert-md, .alert-checkbox-group.sc-ion-alert-md {
+  border-top: 1px solid rgba(0, 0, 0, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
