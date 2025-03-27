@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-searchbar show-clear-button="focus" (ionInput)="handleInput($event)"></ion-searchbar>
+    </ion-buttons>
+    <ion-title style="text-align: center; font-family: 'Work Sans';font-size: 25px;">
+      To-do List 🗹
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-item>
+        <ion-select style="width:auto"
+        (ionChange)="onSortChange($event)" 
+        [value]="sortOption">
+          <ion-select-option value="asc">A-Z</ion-select-option>
+          <ion-select-option value="desc">Z-A</ion-select-option>
+          <ion-select-option value="furthest">Time left ⬆</ion-select-option>
+          <ion-select-option value="closest">Time left ⬇</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <div>
+      <ion-item>
+        <ion-select #filterSelect placeholder="Filter" (ionChange)="changeF(filterSelect.value)">
+          <ion-select-option value="all">All</ion-select-option>
+          <ion-select-option value="completed">Completed</ion-select-option>
+          <ion-select-option value="remaining">Remaining</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+    <app-add-task style="padding-left: 1%;"></app-add-task>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">
+        Inbox
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-list>
+    @for (tasks of results; track tasks) {
+      <app-message [tasks]="tasks"></app-message>
+    }
+  </ion-list>
+</ion-content>
