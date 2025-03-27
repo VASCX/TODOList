@@ -11,8 +11,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "build:gh-pages": "ng build --base-href=/repository-name/",
-    "deploy": "gh-pages -d dist/your-project-name"
+    "build:gh-pages": "ng build --base-href=/TODOList/",
+    "deploy": "gh-pages -d dist/TODOList"
   },
   "private": true,
   "dependencies": {
